@@ -1,0 +1,14 @@
+import ClassesAndObjects.Car;
+
+public class pooApplication {
+    public static void main (String[] args){
+        Car car1 = new Car("red","Toyota",120);
+        Car car2 = new Car();
+        car2.setColor("white");
+        car2.setBrand("Audi");
+        car2.setKm(0);
+
+        System.out.println(car1);
+        System.out.println(car2);
+    }
+}

@@ -1,0 +1,23 @@
+import ClassesAndObjects.Operation;
+
+import javax.swing.*;
+
+public class pooApplication {
+    public static void main (String[] args){
+
+        int number1 = Integer.parseInt(JOptionPane.showInputDialog("Type a number: "));
+        int number2 = Integer.parseInt(JOptionPane.showInputDialog("Type a number: "));
+
+        Operation operation = new Operation(number1,number2);
+
+        operation.sum();
+        operation.subtraction();
+        operation.multiplication();
+
+        System.out.println(operation);
+
+        Operation operation2 = new Operation();
+        float suma = operation2.sum(1,2);
+        System.out.println(suma);
+    }
+}
