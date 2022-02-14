@@ -1,71 +1,28 @@
-package ClassesAndObjects;
+import ClassesAndObjects.Operation;
 
-public class Operation {
-    //ATTRIBUTES
-        int number1;
-        int number2;
-        int sum;
-        int subtraction;
-        int multiplication;
-        int division;
+import javax.swing.*;
 
-    //METHODS
-    public Operation() {
-    }
+public class pooApplication {
+    public static void main (String[] args){
 
-    public Operation(int number1, int number2) {
-        this.number1 = number1;
-        this.number2 = number2;
-    }
+        int number1 = Integer.parseInt(JOptionPane.showInputDialog("Type a number: "));
+        int number2 = Integer.parseInt(JOptionPane.showInputDialog("Type a number: "));
 
-    public void sum() {
-        sum = number1+number2;
-    }
+        Operation operation = new Operation(number1,number2);
 
-    public int sum(int number1, int number2) {
-       return number1 + number2;
-    }
+        operation.sum();
+        operation.subtraction();
+        operation.multiplication();
+        operation.division();
 
-    public void subtraction() {
-        subtraction = number1-number2;
-    }
+        System.out.println(operation);
 
-    public int subtraction(int number1, int number2) {
-        return number1-number2;
-    }
+        Operation operation2 = new Operation();
+        int sumOp = operation2.sum(5,4);
+        int subOp = operation2.subtraction(7,3);
+        int multiOp = operation2.multiplication(5,6);
+        int divOp = operation2.division(8,2);
 
-    public void multiplication() {
-        multiplication = number1*number2;
-    }
-
-    public int multiplication(int number1, int number2) {
-        return number1*number2;
-    }
-
-    public void division() {
-        division = number1/number2;
-    }
-
-    public int division(int number1, int number2) {
-        return number1/number2;
-    }
-
-    @Override
-    public String toString() {
-        return "Operation{" +
-                "sum=" + sum +
-                ", subtraction=" + subtraction +
-                ", multiplication=" + multiplication +
-                ", division=" + division +
-                '}';
-    }
-
-    public String toString(int sum, int subtraction, int multiplication, int division) {
-        return "Operation{" +
-                "sum=" + sum +
-                ", subtraction=" + subtraction +
-                ", multiplication=" + multiplication +
-                ", division=" + division +
-                '}';
+        System.out.println(operation2.toString(sumOp,subOp,multiOp,divOp));
     }
 }
