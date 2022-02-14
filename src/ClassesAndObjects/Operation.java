@@ -7,6 +7,7 @@ public class Operation {
         int sum;
         int subtraction;
         int multiplication;
+        int division;
 
     //METHODS
     public Operation() {
@@ -21,24 +22,32 @@ public class Operation {
         sum = number1+number2;
     }
 
-    public void sum(int number1, int number2) {
-        sum = number1 + number2;
+    public int sum(int number1, int number2) {
+       return number1 + number2;
     }
 
     public void subtraction() {
         subtraction = number1-number2;
     }
 
-    public void subtraction(int number1, int number2) {
-        subtraction = number1-number2;
+    public int subtraction(int number1, int number2) {
+        return number1-number2;
     }
 
     public void multiplication() {
         multiplication = number1*number2;
     }
 
-    public void multiplication(int number1, int number2) {
-        multiplication = number1*number2;
+    public int multiplication(int number1, int number2) {
+        return number1*number2;
+    }
+
+    public void division() {
+        division = number1/number2;
+    }
+
+    public int division(int number1, int number2) {
+        return number1/number2;
     }
 
     @Override
@@ -47,6 +56,16 @@ public class Operation {
                 "sum=" + sum +
                 ", subtraction=" + subtraction +
                 ", multiplication=" + multiplication +
+                ", division=" + division +
+                '}';
+    }
+
+    public String toString(int sum, int subtraction, int multiplication, int division) {
+        return "Operation{" +
+                "sum=" + sum +
+                ", subtraction=" + subtraction +
+                ", multiplication=" + multiplication +
+                ", division=" + division +
                 '}';
     }
 }

@@ -13,12 +13,16 @@ public class pooApplication {
         operation.sum();
         operation.subtraction();
         operation.multiplication();
+        operation.division();
 
         System.out.println(operation);
 
         Operation operation2 = new Operation();
-        operation2.sum(1,2);
-        operation2.multiplication(2,4);
-        System.out.println(operation2);
+        int sumOp = operation2.sum(5,4);
+        int subOp = operation2.subtraction(7,3);
+        int multiOp = operation2.multiplication(5,6);
+        int divOp = operation2.division(8,2);
+
+        System.out.println(operation2.toString(sumOp,subOp,multiOp,divOp));
     }
 }
