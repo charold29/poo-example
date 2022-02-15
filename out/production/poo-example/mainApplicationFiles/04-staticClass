@@ -2,6 +2,8 @@ import ClassesAndObjects.Static;
 
 public class pooApplication {
     public static void main (String[] args){
+        //We can omit the creation of the object to get static attributes and static methods
         System.out.println(Static.getPhrase());
+        Static.sumar(20,30);
     }
 }
