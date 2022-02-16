@@ -31,7 +31,6 @@ public class pooApplication {
             String model = JOptionPane.showInputDialog("Insert model " + (i+1) + " :");
             float price = Float.parseFloat(JOptionPane.showInputDialog("Insert price " + (i+1) + " :"));
 
-            
             vehicles[i] = new Vehicle(brand,model,price);
         }
 
