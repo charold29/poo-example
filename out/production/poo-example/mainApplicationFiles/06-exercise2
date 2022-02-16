@@ -45,6 +45,6 @@ public class pooApplication {
         } while (option != 5);
 
         JOptionPane.showMessageDialog(null, "Final plane looks like this: " +
-                "\n[x= " + plane.getX() + " | y= " + plane.getY() + "]");
+                "\n[x= " + plane.getX() + ", y= " + plane.getY() + "]");
     }
 }
