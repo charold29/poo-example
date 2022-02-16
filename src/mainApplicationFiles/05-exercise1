@@ -1,4 +1,4 @@
-import Ejercicios.Quadrilateral;
+import Exercises.Quadrilateral;
 
 import javax.swing.*;
 

@@ -1,4 +1,4 @@
-package Ejercicios;
+package Exercises;
 
 public class Quadrilateral {
     private final float side1;
