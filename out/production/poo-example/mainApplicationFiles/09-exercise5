@@ -5,7 +5,7 @@ import javax.swing.*;
 public class pooApplication {
 
     public static void biggestAreaTriangle(IsoscelesTriangle[] triangles){
-        double minArea = Double.MIN_VALUE;
+        float minArea = Float.MIN_VALUE;
         int biggestTriangleAreaIndex = 0;
 
         int i;
@@ -29,13 +29,13 @@ public class pooApplication {
 
         for (int i = 0; i<numTriangles; i++){
             int id = i + 1;
-            double base = Double.parseDouble(JOptionPane.showInputDialog("Triangle " + id + "\nType the base:"));
-            double side = Double.parseDouble(JOptionPane.showInputDialog("Triangle " + id + "\nType the side:"));
+            float base = Float.parseFloat(JOptionPane.showInputDialog("Triangle " + id + "\nType the base:"));
+            float height = Float.parseFloat(JOptionPane.showInputDialog("Triangle " + id + "\nType the height:"));
 
-            triangles[i] = new IsoscelesTriangle(base,side);
+            triangles[i] = new IsoscelesTriangle(base,height);
 
-            double perimeter = triangles[i].getPerimeter();
-            double area = triangles[i].getArea();
+            float perimeter = triangles[i].getPerimeter();
+            float area = triangles[i].getArea();
 
             JOptionPane.showMessageDialog(null, "Triangle " + id
                     + "\nPerimeter: " + perimeter

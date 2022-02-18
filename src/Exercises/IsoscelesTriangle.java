@@ -1,27 +1,27 @@
 package Exercises;
 
 public class IsoscelesTriangle {
-    private final float base;
-    private final float height;
+    private final double base;
+    private final double side;
 
-    public IsoscelesTriangle(float base, float height) {
+    public IsoscelesTriangle(double base, double side) {
         this.base = base;
-        this.height = height;
+        this.side = side;
     }
 
-    public float getPerimeter(){
-        return base + (height * 2);
+    public double getPerimeter(){
+        return base + (side * 2);
     }
 
-    public float getArea(){
-        return (base * height) / 2;
+    public double getArea(){
+        return ( base * (Math.sqrt(Math.pow(side,2) - (Math.pow(base,2) / 4))) ) / 2;
     }
 
     @Override
     public String toString() {
         return "IsoscelesTriangle{" +
                 "base=" + base +
-                ", height=" + height +
+                ", side=" + side +
                 '}';
     }
 }
