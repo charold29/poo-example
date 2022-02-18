@@ -1,4 +1,5 @@
 import Exercises.Athlete;
+import Exercises.Vehicle;
 
 import javax.swing.*;
 
