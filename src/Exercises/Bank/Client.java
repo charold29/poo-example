@@ -13,6 +13,10 @@ public class Client {
         this.accounts = accounts;
     }
 
+    public Account[] getAccounts() {
+        return accounts;
+    }
+
     public String getName() {
         return name;
     }

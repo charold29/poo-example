@@ -1,6 +1,82 @@
+import Exercises.Bank.Account;
+import Exercises.Bank.Client;
+
+import javax.swing.*;
+
 public class pooApplication {
+
+    public static String showAccounts(Account[] accounts){
+        StringBuilder accountsString = new StringBuilder();
+        for (Account account : accounts) {
+            accountsString.append(account.toString());
+        }
+        return accountsString.toString();
+    }
 
     public static void main (String[] args) {
 
+        /* Predefined accounts data */
+        Account clientAccount1 = new Account(1,45000.30);
+        Account clientAccount2 = new Account(2, 34000.50);
+        //Account clientAccount3 = new Account(11,56000.30);
+        //Account clientAccount4 = new Account(22, 123000.50);
+
+        Account[] accountExampleArray1 = {clientAccount1,clientAccount2};
+        //Account[] accountExampleArray2 = {clientAccount3,clientAccount4};
+
+        /* Client Data */
+        String name = JOptionPane.showInputDialog("Welcome to PW Bank!\nType your name:");
+        String lastname = JOptionPane.showInputDialog("Type your lastname:");
+        String dni = JOptionPane.showInputDialog("Type your dni:");
+
+        Client client1 = new Client(name,lastname,dni,accountExampleArray1);
+
+        int option;
+        do{
+            Account[] clientAccounts = client1.getAccounts();
+            int clientAccountsSize = clientAccounts.length;
+            int idAccount;
+            Account targetAccount = null;
+                    option = Integer.parseInt(JOptionPane.showInputDialog("\tMENU\n" +
+                    "(0) See your accounts\n" +
+                    "(1) See balance account\n" +
+                    "(2) Deposit money\n" +
+                    "(3) Withdraw money\n" +
+                    "(4) Exit"));
+            switch (option) {
+                case 0:
+                    JOptionPane.showMessageDialog(null, name + " " + lastname + " accounts:\n" +
+                            showAccounts(clientAccounts));
+                    break;
+                case 1:
+                    idAccount = Integer.parseInt(JOptionPane.showInputDialog("Put the idAccount: "));
+                    if (idAccount >= clientAccountsSize)
+                        break;
+                    targetAccount = clientAccounts[idAccount];
+
+                    JOptionPane.showMessageDialog(null, "Your balance account is:\n"
+                            + targetAccount.getBalance());
+                    break;
+                case 2:
+                    idAccount = Integer.parseInt(JOptionPane.showInputDialog("Put the idAccount: "));
+                    if (idAccount >= clientAccountsSize)
+                        break;
+                    targetAccount = clientAccounts[idAccount];
+
+                    double money = Double.parseDouble(JOptionPane.showInputDialog("Put the money to deposit: "));
+                    targetAccount.depositMoney(money);
+                    break;
+
+                case 3:
+
+                    break;
+                case 4:
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Type a correct option");
+                    break;
+
+            }
+        }while(option != 4);
     }
 }

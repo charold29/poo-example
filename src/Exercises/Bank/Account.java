@@ -24,4 +24,12 @@ public class Account {
     public void withdrawMoney(double amount){
         balance -= amount;
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "idAccount=" + idAccount +
+                ", balance= HIDDEN" +
+                "}\n";
+    }
 }
