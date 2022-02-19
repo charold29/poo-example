@@ -45,7 +45,7 @@ public class pooApplication {
 
     public static void main (String[] args) {
 
-        ComplexNumber[] complexes = new ComplexNumber[2];
+        ComplexNumber[] complexs = new ComplexNumber[2];
 
         int option;
         do {
@@ -57,16 +57,16 @@ public class pooApplication {
                     "(5) Exit"));
             switch (option){
                 case 1:
-                    enterNumbers(complexes);
-                    sumComplexNumbers(complexes[0],complexes[1]);
+                    enterNumbers(complexs);
+                    sumComplexNumbers(complexs[0],complexs[1]);
                     break;
                 case 2:
-                    enterNumbers(complexes);
-                    multiComplexNumbers(complexes[0],complexes[1]);
+                    enterNumbers(complexs);
+                    multiComplexNumbers(complexs[0],complexs[1]);
                     break;
                 case 3:
-                    enterNumbers(complexes);
-                    compareComplexNumbers(complexes[0],complexes[1]);
+                    enterNumbers(complexs);
+                    compareComplexNumbers(complexs[0],complexs[1]);
                     break;
                 case 4:
                     int part1 = Integer.parseInt(JOptionPane.showInputDialog("Complex Number \nType part 1:"));
