@@ -1,42 +1,7 @@
-import Exercises.Vehicle;
-
-import javax.swing.*;
 
 public class pooApplication {
 
-    public static Vehicle cheapestVehicle(Vehicle[] vehicles) {
-        float min = Float.MAX_VALUE;
-        int minInVehicleIndex = 0;
-
-        int i;
-        for (i = 0; i < vehicles.length; i++) {
-            if (vehicles[i].getPrice() < min) {
-                min = vehicles[i].getPrice();
-                minInVehicleIndex = i;
-            }
-        }
-
-        return vehicles[minInVehicleIndex];
-    }
-
     public static void main (String[] args) {
-
-        int numVehicles = Integer.parseInt(JOptionPane.showInputDialog("Insert the number of vehicles: "));
-
-        Vehicle[] vehicles = new Vehicle[numVehicles];
-
-        for (int i = 0; i<numVehicles; i++){
-
-            String brand = JOptionPane.showInputDialog("Insert brand " + (i+1) + " :");
-            String model = JOptionPane.showInputDialog("Insert model " + (i+1) + " :");
-            float price = Float.parseFloat(JOptionPane.showInputDialog("Insert price " + (i+1) + " :"));
-
-            
-            vehicles[i] = new Vehicle(brand,model,price);
-        }
-
-        JOptionPane.showMessageDialog(null,
-                "The cheapest vehicle is: \n" + cheapestVehicle(vehicles));
 
     }
 }
