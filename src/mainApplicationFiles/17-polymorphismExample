@@ -1,0 +1,20 @@
+import Polymorphism.PickupVehicle;
+import Polymorphism.SportVehicle;
+import Polymorphism.TourismVehicle;
+import Polymorphism.Vehicle;
+
+public class pooApplication {
+
+    public static void main (String[] args) {
+        Vehicle[] vehicles = new Vehicle[4];
+
+        vehicles[0] = new Vehicle("a","toyota","corolla");
+        vehicles[1] = new TourismVehicle("2","VW","Gol",4);
+        vehicles[2] = new SportVehicle("3","Ferrari","A34",34);
+        vehicles[3] = new PickupVehicle("4", "For","AV",300);
+
+        for (Vehicle vehicle:vehicles) {
+            System.out.println(vehicle);
+        }
+    }
+}

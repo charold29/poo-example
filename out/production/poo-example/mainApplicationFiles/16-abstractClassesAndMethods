@@ -1,0 +1,13 @@
+import AbstractClassesAndMethods.CarnivorousAnimal;
+import AbstractClassesAndMethods.Plant;
+
+public class pooApplication {
+
+    public static void main (String[] args) {
+        Plant p = new Plant();
+        CarnivorousAnimal cAnimal = new CarnivorousAnimal();
+
+        p.feed();
+        cAnimal.feed();
+    }
+}
