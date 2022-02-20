@@ -9,10 +9,6 @@ public class Account {
         this.balance = balance;
     }
 
-    public int getIdAccount() {
-        return idAccount;
-    }
-
     public double getBalance() {
         return balance;
     }
