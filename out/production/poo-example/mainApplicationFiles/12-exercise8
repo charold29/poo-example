@@ -8,27 +8,24 @@ public class pooApplication {
 
     public static Package findPackage(Package[] packages, int idPackage) {
         for(Package p: packages){
-            if( p != null && (p.getIdPackage() == idPackage )){
+            if( p != null && (p.getIdPackage() == idPackage ))
                 return p;
-            }
         }
         return null;
     }
 
     public static BranchOffice findBranch(BranchOffice[] branches, String place){
         for(BranchOffice branch:branches){
-            if( branch != null && (branch.getAddress().equals(place) || branch.getCity().equals(place))){
+            if( branch != null && (branch.getAddress().equals(place) || branch.getCity().equals(place)))
                 return branch;
-            }
         }
         return null;
     }
 
     public static BranchOffice findBranch(BranchOffice[] branches, int idBranch){
         for(BranchOffice branch:branches){
-            if( branch != null && (branch.getId() == idBranch )){
+            if( branch != null && (branch.getId() == idBranch ))
                 return branch;
-            }
         }
         return null;
     }
@@ -37,9 +34,8 @@ public class pooApplication {
         StringBuilder branchesString = new StringBuilder();
 
         for (BranchOffice branch : branches) {
-            if (branch != null) {
+            if (branch != null)
                 branchesString.append(branch);
-            }
         }
         return "List of branches:\n" + branchesString;
     }
@@ -48,9 +44,8 @@ public class pooApplication {
         StringBuilder packagesString = new StringBuilder();
 
         for(Package p: packages){
-            if(p != null){
+            if(p != null)
                 packagesString.append(p);
-            }
         }
         return "List of packages:\n" + packagesString;
     }

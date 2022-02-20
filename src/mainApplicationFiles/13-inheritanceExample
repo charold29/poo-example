@@ -1,0 +1,11 @@
+import Inheritance.Student;
+
+public class pooApplication {
+
+    public static void main (String[] args) {
+        Student student = new Student("Harold","Rojas",1,20);
+        Student student2 = new Student("Jose","Cruzado",34,1,20);
+
+        System.out.println(student + "\n" + student2);
+    }
+}
