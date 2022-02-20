@@ -36,6 +36,6 @@ public class Package {
                 ", dni='" + dni + '\'' +
                 ", weight=" + weight +
                 ", priority=" + priority +
-                '}';
+                "}\n";
     }
 }
