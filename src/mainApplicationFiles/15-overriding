@@ -1,0 +1,12 @@
+import Overriding.Cow;
+import Overriding.Dog;
+import Overriding.Fish;
+
+public class pooApplication {
+
+    public static void main (String[] args) {
+        new Dog().comer();
+        new Cow().comer();
+        new Fish().comer();
+    }
+}
