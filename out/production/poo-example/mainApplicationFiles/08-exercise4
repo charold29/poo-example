@@ -1,0 +1,40 @@
+import Exercises.Athlete;
+
+import javax.swing.*;
+
+public class pooApplication {
+
+    public static Athlete fastestAthlete(Athlete[] athletes) {
+        float minDuration = Float.MAX_VALUE;
+        int fastestAthleteIndex = 0;
+
+        int i;
+        for(i=0; i<athletes.length; i++){
+            if(athletes[i].getRaceTime() < minDuration){
+                minDuration = athletes[i].getRaceTime();
+                fastestAthleteIndex = i;
+            }
+        }
+        return athletes[fastestAthleteIndex];
+    }
+
+    public static void main (String[] args) {
+
+        int numAthletes = Integer.parseInt(JOptionPane.showInputDialog("Insert the number of athletes: "));
+
+        Athlete[] athletes = new Athlete[numAthletes];
+
+        for (int i = 0; i<numAthletes; i++){
+
+            int id = i+1;
+            String name = JOptionPane.showInputDialog("Type athlete " + id + " name:");
+            float time = Float.parseFloat(JOptionPane.showInputDialog("Type the race time of athlete " + id + ":"));
+
+            athletes[i] = new Athlete(id,name,time);
+        }
+
+        JOptionPane.showMessageDialog(null,
+                "The fastest athlete in the race was: " + fastestAthlete(athletes));
+
+    }
+}

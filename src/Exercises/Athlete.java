@@ -1,15 +1,26 @@
 package Exercises;
 
 public class Athlete {
-    private int id;
-    private String name;
-    private int secDuration;
+    private final int id;
+    private final String name;
+    private final float raceTime;
 
-    public Athlete(int id, String name, int secDuration) {
+    public Athlete(int id, String name, float raceTime) {
         this.id = id;
         this.name = name;
-        this.secDuration = secDuration;
+        this.raceTime = raceTime;
     }
 
-    public
+    public float getRaceTime() {
+        return raceTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Athlete{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", raceTime=" + raceTime +
+                '}';
+    }
 }
