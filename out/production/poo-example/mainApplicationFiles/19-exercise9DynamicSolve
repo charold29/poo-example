@@ -13,12 +13,16 @@ public class pooApplication {
         JOptionPane.showMessageDialog(null, polygons);
     }
 
-    public static void showPolygons(ArrayList<Polygon> polygons){
+    public static void showPolygonsWithArea(ArrayList<Polygon> polygons){
         StringBuilder polygonsString = new StringBuilder();
 
+        int index=1;
         for (Polygon polygon: polygons) {
-            if(polygon != null)
-                polygonsString.append(polygon);
+            if(polygon != null) {
+                polygonsString.append(index).append("-").append(polygon);
+                polygonsString.append("Area:").append(polygon.getArea()).append("\n");
+                index++;
+            }
         }
         JOptionPane.showMessageDialog(null,"List of polygons:\n" + polygonsString);
     }
@@ -68,6 +72,6 @@ public class pooApplication {
 
     public static void main (String[] args) {
         createPolygon();
-        showPolygons(polygons);
+        showPolygonsWithArea(polygons);
     }
 }
