@@ -9,6 +9,8 @@ public class pooApplication {
         Vehicle[] vehicles = new Vehicle[4];
 
         vehicles[0] = new Vehicle("a","toyota","corolla");
+
+        // UP-CASTING
         vehicles[1] = new TourismVehicle("2","VW","Gol",4);
         vehicles[2] = new SportVehicle("3","Ferrari","A34",34);
         vehicles[3] = new PickupVehicle("4", "For","AV",300);
@@ -16,5 +18,10 @@ public class pooApplication {
         for (Vehicle vehicle:vehicles) {
             System.out.println(vehicle);
         }
+
+        // DOWN-CASTING (WARNING)
+        Vehicle v = new TourismVehicle("123ABC","Hyundai","Tucson",4);
+        TourismVehicle newVehicle = (TourismVehicle)v;
+
     }
 }

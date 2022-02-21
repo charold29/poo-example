@@ -1,0 +1,88 @@
+import LastExercises.PolygonAreas.Polygon;
+import LastExercises.PolygonAreas.Rectangle;
+import LastExercises.PolygonAreas.Triangle;
+
+import javax.swing.*;
+
+public class pooApplication {
+
+    public static String showPolygons(Polygon[] polygons){
+        StringBuilder polygonsString = new StringBuilder();
+
+        for (Polygon polygon: polygons) {
+            if(polygon != null)
+                polygonsString.append(polygon);
+        }
+        return "List of polygons:\n" + polygonsString;
+    }
+
+    public static int getLastIndex(Polygon[] polygons){
+        int index = 0;
+        for (Polygon polygon: polygons) {
+            if(polygon != null)
+                index++;
+        }
+        return index;
+    }
+
+    public static void main (String[] args) {
+
+        int numPolygons = Integer.parseInt(JOptionPane.showInputDialog("How many polygons do you want in your array?"));
+
+        Polygon[] polygons = new Polygon[numPolygons];
+
+        int option;
+        do{
+            option = Integer.parseInt(JOptionPane.showInputDialog("\t MENU\n" +
+                    "(1) Add triangles\n" +
+                    "(2) Add rectangles\n" +
+                    "(3) Show polygons\n" +
+                    "(4) Exit"));
+
+            int lastIndex = 0;
+            switch (option){
+                case 1:
+                    double side1;
+                    double side2;
+                    double side3;
+
+                    int numTriangles = Integer.parseInt(JOptionPane.showInputDialog("Number of triangles to insert:"));
+                    lastIndex = getLastIndex(polygons);
+
+                    for(int i = 0 ; i<numTriangles; i++){
+                        side1 = Double.parseDouble(JOptionPane.showInputDialog("Side 1 value:"));
+                        side2 = Double.parseDouble(JOptionPane.showInputDialog("Side 2 value:"));
+                        side3 = Double.parseDouble(JOptionPane.showInputDialog("Side 3 value:"));
+
+                        Triangle triangle = new Triangle(side1,side2,side3);
+
+                        polygons[lastIndex] = triangle;
+                        lastIndex++;
+                    }
+                    break;
+                case 2:
+                    int numRectangles = Integer.parseInt(JOptionPane.showInputDialog("Number of rectangles to insert:"));
+                    lastIndex=getLastIndex(polygons);
+
+                    for(int i = 0 ; i<numRectangles; i++){
+                        side1 = Double.parseDouble(JOptionPane.showInputDialog("Side 1 value:"));
+                        side2 = Double.parseDouble(JOptionPane.showInputDialog("Side 2 value:"));
+
+                        Rectangle rectangle = new Rectangle(side1,side2);
+
+                        polygons[lastIndex] = rectangle;
+                        lastIndex++;
+                    }
+                    break;
+                case 3:
+                    JOptionPane.showMessageDialog(null,showPolygons(polygons));
+                    break;
+                case 4:
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null,"Type a correct option please.");
+            }
+        }while(option !=4 );
+
+    }
+}
